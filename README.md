@@ -8,41 +8,43 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            margin: 50px;
+            margin: 10px;
             background-color: #ffe6f2; /* Pink pastel background */
             color: #ff1a75; /* Dark pink text */
         }
 
         h2 {
             color: #ff66b2; /* Darker pink for headings */
+            font-size: 24px; /* Adjust font size */
+            margin-bottom: 5px; /* Add margin for separation */
         }
 
         p {
-            font-size: 14px;
+            font-size: 12px; /* Smaller font size for description */
             color: #ff1a75; /* Dark pink text */
         }
 
         form {
             background-color: #ffd9e6; /* Light pink form background */
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         label, select, button {
-            margin: 10px;
-            font-size: 16px;
+            margin: 5px;
+            font-size: 14px; /* Adjust font size */
         }
 
         #result {
-            margin-top: 20px;
+            margin-top: 10px;
             font-weight: bold;
         }
 
         .footer {
-            font-size: 12px;
-            margin-top: 30px;
+            font-size: 10px; /* Smaller font size for footer */
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -55,7 +57,7 @@
         <select id="jenisItems" required>
             <option value="9">Items Shop</option>
             <option value="12">Items Rare (Harga 100-5000 coins)</option>
-            <option value="13">Items Rare (Harga 5500-10000 coins)</option>
+            <option value="11">Items Rare (Harga 500 ke atas)</option>
         </select>
         
         <label for="hargaItems">Harga Items:</label>
@@ -81,7 +83,7 @@
             <option value="4500">4500 coins</option>
             <option value="5000">5000 coins</option>
             <option value="5500">5500 coins</option>
-            <!-- Dan seterusnya sesuai kelipatan 500 hingga 20000 -->
+            <!-- Dan seterusnya sesuai kelipatan 500 hingga 15000 -->
             <option value="6000">6000 coins</option>
             <option value="6500">6500 coins</option>
             <option value="7000">7000 coins</option>
@@ -101,16 +103,6 @@
             <option value="14000">14000 coins</option>
             <option value="14500">14500 coins</option>
             <option value="15000">15000 coins</option>
-            <option value="15500">15500 coins</option>
-            <option value="16000">16000 coins</option>
-            <option value="16500">16500 coins</option>
-            <option value="17000">17000 coins</option>
-            <option value="17500">17500 coins</option>
-            <option value="18000">18000 coins</option>
-            <option value="18500">18500 coins</option>
-            <option value="19000">19000 coins</option>
-            <option value="19500">19500 coins</option>
-            <option value="20000">20000 coins</option>
         </select>
         
         <button type="button" onclick="calculateTotal()">Hitung Total</button>
@@ -119,7 +111,7 @@
     <div id="result"></div>
 
     <p>Kalkulator ini digunakan untuk memeriksa harga items Plato yang ingin customers beli. Jika ingin mengecek nama dan harga items lebih detail, bisa cek melalui web <a href="https://platopedia.com/items" target="_blank">platopedia.com/items</a> lalu jumlahkan di web ini.</p>
-    <p class="footer">Last Update: 24/02/2024 | @PlatoNeeds</p>
+    <p class="footer">Last Update: 24/02/2024 | <a href="https://x.com/PlatoNeeds" target="_blank">@PlatoNeeds</a></p>
 
     <script>
         // Fungsi untuk menghitung total dan menampilkan hasil
@@ -131,9 +123,9 @@
             // Menggunakan rumus sesuai dengan jenis items yang dipilih
             if (jenisItems === 9) {
                 totalHarga = jenisItems * hargaItems;
-            } else if (jenisItems === 12) {
+            } else if (jenisItems === 12 && hargaItems <= 5000) {
                 totalHarga = jenisItems * hargaItems;
-            } else if (jenisItems === 13) {
+            } else if (jenisItems === 11 && hargaItems > 500) {
                 totalHarga = jenisItems * hargaItems;
             }
 
